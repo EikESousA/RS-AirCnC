@@ -4,7 +4,7 @@
 
 # Semana Omnistack 9.0 - AirCnC - 30/09/2019 - 06/10/2019
 
-Curso da Semana Oministack 9.0 realizado pela RocketSeat (https://rocketseat.com.br/).
+![alt text](https://i.imgur.com/rrToM6L.png?2) Curso da Semana Oministack 9.0 realizado pela RocketSeat (https://rocketseat.com.br/).
 
 ## 01) Objetivo
 
