@@ -1,38 +1,124 @@
-<p align="center">
-  <img src="https://i.imgur.com/eObppcH.png" alt="Sublime's custom image"/>
-</p>
+<div align="center" style="margin: 50px;">
+  <img alt="logo aircnc" src="./img/logo.png" width="auto" heigth="auto"/>
+</div>
 
-# Semana Omnistack 9.0 - AirCnC - 30/09/2019 - 06/10/2019
+<div align="center">
+  <h1> Semana Omnistack 09 - AirCnC - 30/09/2019 - 04/09/2019 </h1>
+</div>
 
-![alt text](https://i.imgur.com/rrToM6L.png?2) Curso da Semana Oministack 9.0 realizado pela RocketSeat (https://rocketseat.com.br/).
+<div align="center" style="margin: 20px;">
+  <p align="center" >
+    <a href="#-descricao-da-aplicação"> 🎯 Descrição da Aplicação </a> |
+    <a href="#-tecnologias-utilizadas"> 🚀 Tecnologias Utilizadas </a> |
+    <a href="#-tecnologias-usadas"> 👨‍🚀 Dependências Utilizadas </a> |
+  </p>
+</div>
 
-## 01) Objetivo
+<div align="center" style="margin: 20px;">
+  <p align="center" >
+    <a href="#-prévia-da-aplicação"> 🔥 Prévia da Aplicação </a> |    
+    <a href="#-deploy-da-aplicação"> 🔨 Deploy da Aplicação </a> |
+    <a href="#-executando-o-projeto"> ⚡ Executando o Projeto </a> |
+    <a href="#-como-contribuir?"> 🤔 Como Contribuir? </a>
+  </p>
+</div>
 
-Criar um aplicativo parecido com o AirBnB para Desenvolvendores chamado AirCnC.
+## 🎯 Descrição da Aplicação
 
-## 02) Tecnologias utilizadas
+<p> Aplicativo parecido com o AirBnB, onde as empresas podem colocar (via web) seus espaços divulgando as tecnologias e o valor diario de cada espaço e os usuários podem pesquisar (via mobile) as empresas e solicitar a reserva desses espaços. </p> 
 
-![alt text](https://i.imgur.com/WrDPz0k.png?1) ![alt text](https://i.imgur.com/RSumgFf.png?1) ![alt text](https://i.imgur.com/LLdouLx.png?1)
-* Back-end: Node.js
-* Front-end Web: ReactJS
-* Front-end Mobile: React Native
+<p> A aplicação foi criada através do curso realizado pela 
+  <img alt="logo rocketseat" src="./img/rocketseat.png" width="auto" heigth="auto"/>
+  <a href="https://rocketseat.com.br/"> Rocketseat </a>
+  (Semana Omnistack - 09), onde esse curso foi realizado no dia <strong> 30/09/2019 </strong> até o dia <strong> 04/09/2019 </strong>. 
+</p> 
 
-## 03) Dependências utilizadas
+## 🚀 Tecnologias Utilizadas
 
-* Back-end: express, nodemon, mongoose, multer, cors, socket.io
-* Front-end Web: axios, react-dom, react-router-dom, react-scripts, socket.io-client
-* Front-end Mobile: axios, expo, react-dom, react-navigation, socket.io-client
+<p>
+  <strong> Back-end </strong>: Node.JS
+</P>
+<p>
+  <strong> Front-end Web</strong>: React
+</P>
+<p>
+  <strong> Front-end Mobile</strong>: React Native
+</P>
+<p>
+  <strong> Banco de dados </strong>: MongoDB
+</P>
 
-## 04) Telas
+## 👨‍🚀 Dependências Utilizadas
 
-### Web
+  <p> <strong> Back-end </strong>: express, nodemon, mongoose, multer, cors, socket.io. </p>
+  <p> <strong> Front-end Web </strong>: axios, react-dom, react-router-dom, react-scripts, socket.io-client. </p>
+  <p> <strong> Front-end Mobile </strong>: axios, expo, react-dom, react-navigation, socket.io-client. </p>
+  
+## 🔥 Prévia da Aplicação
 
-![alt text](https://i.imgur.com/CMiLBf0l.png)
-![alt text](https://i.imgur.com/gKWRKKFl.png)
-![alt text](https://i.imgur.com/XuSkt6Yl.png)
+<div align="center" style="margin: 50px;">
+  <div style="margin: 50px;">
+    <img alt="tela web um" src="./img/web-1.png" width="600" heigth="300" style="margin: 50px;"/>
+    <img alt="tela web dois" src="./img/web-2.png" width="600" heigth="300" style="margin: 50px;"/>
+    <img alt="tela web tres" src="./img/web-3.png" width="600" heigth="300" style="margin: 50px;"/>
+  </div>
+  <div style="margin: 50px;">
+    <img alt="tela mobile um" src="./img/mobile-1.jpg" width="200" heigth="150" style="margin: 50px;"/>
+    <img alt="tela mobile dois" src="./img/mobile-2.jpg" width="200" heigth="150" style="margin: 50px;"/>
+    <img alt="tela mobile três" src="./img/mobile-3.jpg" width="200" heigth="150" style="margin: 50px;"/>
+    <img alt="tela mobile quatro" src="./img/mobile-4.jpg" width="200" heigth="150" style="margin: 50px;"/>
+  </div>
+</div>
 
-### Mobile
-![alt text](https://i.imgur.com/0YytbxKm.png)
-![alt text](https://i.imgur.com/cXhLslhm.png)
-![alt text](https://i.imgur.com/56fWzUEm.png)
-![alt text](https://i.imgur.com/lw83uF9m.png)
+## 🔨 Deploy da Aplicação
+
+<p> <strong> Em Construção </strong> </p>
+
+## ⚡ Executando o Projeto
+
+#### Clonando o projeto
+
+```sh
+$ git clone https://github.com/EikESousA/RS-AirCnC.git
+$ cd RS-BeTheHero
+```
+
+#### Iniciando a API
+
+```sh
+$ cd server
+$ yarn && yarn dev
+```
+
+#### Iniciando o Front-end Web
+```sh
+$ cd web
+$ yarn && yarn start
+```
+
+#### Iniciando o Front-end Mobile (Android)
+
+```sh
+$ cd mobile
+$ yarn && yarn android && yarn start
+```
+
+## 🤔 Como Contribuir?
+
+```bash
+# Clone o seu fork
+$ git clone url-do-seu-fork && cd RS-AirCnC
+
+# Crie uma branch com sua feature ou correção de bugs
+$ git checkout -b minha-branch
+
+# Faça o commit das suas alterações
+$ git commit -m 'feature/bugfix: minhas alterações'
+
+# Faça o push para a sua branch
+$ git push origin minha-branch
+```
+
+## 📝 Licença
+
+Esse projeto está sob a licença MIT. Veja o arquivo [LICENSE](LICENSE.md) para mais detalhes.
