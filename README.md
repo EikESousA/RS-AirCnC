@@ -58,15 +58,15 @@
 
 <div align="center" style="margin: 50px;">
   <div style="margin: 50px;">
-    <img alt="tela web um" src="./img/web-1.png" width="600" heigth="300" style="margin: 50px;"/>
-    <img alt="tela web dois" src="./img/web-2.png" width="600" heigth="300" style="margin: 50px;"/>
-    <img alt="tela web tres" src="./img/web-3.png" width="600" heigth="300" style="margin: 50px;"/>
+    <img alt="tela web um" src="./img/web-1.jpeg" width="600" heigth="300" style="margin: 50px;"/>
+    <img alt="tela web dois" src="./img/web-2.jpeg" width="600" heigth="300" style="margin: 50px;"/>
+    <img alt="tela web tres" src="./img/web-3.jpeg" width="600" heigth="300" style="margin: 50px;"/>
   </div>
   <div style="margin: 50px;">
-    <img alt="tela mobile um" src="./img/mobile-1.jpg" width="200" heigth="150" style="margin: 50px;"/>
-    <img alt="tela mobile dois" src="./img/mobile-2.jpg" width="200" heigth="150" style="margin: 50px;"/>
-    <img alt="tela mobile três" src="./img/mobile-3.jpg" width="200" heigth="150" style="margin: 50px;"/>
-    <img alt="tela mobile quatro" src="./img/mobile-4.jpg" width="200" heigth="150" style="margin: 50px;"/>
+    <img alt="tela mobile um" src="./img/mobile-1.jpeg" width="200" heigth="150" style="margin: 50px;"/>
+    <img alt="tela mobile dois" src="./img/mobile-2.jpeg" width="200" heigth="150" style="margin: 50px;"/>
+    <img alt="tela mobile três" src="./img/mobile-3.jpeg" width="200" heigth="150" style="margin: 50px;"/>
+    <img alt="tela mobile quatro" src="./img/mobile-4.jpeg" width="200" heigth="150" style="margin: 50px;"/>
   </div>
 </div>
 
