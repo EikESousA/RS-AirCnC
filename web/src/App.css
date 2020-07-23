@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css?family=Roboto:400,700&display=swap');
+@import url("https://fonts.googleapis.com/css?family=Nunito:400,700&display=swap");
 
 * {
   margin: 0;
@@ -7,18 +7,22 @@
   box-sizing: border-box;
 }
 
-html, body, #root {
+html,
+body,
+#root {
   min-height: 100%;
 }
 
 body {
-  background: #000 url('./assets/background.jpg') no-repeat;
+  background: black url("assets/background.jpg") no-repeat;
   background-size: cover;
   -webkit-font-smoothing: antialiased !important;
 }
 
-body, input, button {
-  font-family: 'Roboto', Arial, Helvetica, sans-serif;
+body,
+input,
+button {
+  font-family: "Nunito", Helvetica, sans-serif;
   font-size: 14px;
 }
 
@@ -28,12 +32,13 @@ body, input, button {
   width: 100%;
   display: flex;
   flex-direction: column;
-  align-items: center; 
+  align-items: center;
+  padding-bottom: 20px;
 }
 
 .content {
   width: 100%;
-  background: #FFF;
+  background: white;
   margin-top: 50px;
   border-radius: 4px;
   padding: 30px;
@@ -51,21 +56,20 @@ body, input, button {
 }
 
 .content form label {
-  font-size: 12px;
+  font-size: 14px;
   color: #444;
   font-weight: bold;
   margin-bottom: 8px;
 }
 
-.content form label span {
-  font-weight: normal;
+.content form small {
   color: #999;
-  font-size: 14px;
+  font-weight: normal;
 }
 
 .content form input {
   margin-bottom: 20px;
-  border: 1px solid #DDD;
+  border: 1px solid #ddd;
   border-radius: 2px;
   height: 45px;
   padding: 0 15px;
@@ -80,11 +84,11 @@ body, input, button {
   padding: 0 20px;
   font-size: 16px;
   font-weight: bold;
-  background: #F05A5B;
-  color: #FFF;
+  background: #f05a5b;
+  color: white;
   cursor: pointer;
 }
 
 .content button.btn:hover {
-  background: #E14F50;
+  background: #e14f50;
 }
