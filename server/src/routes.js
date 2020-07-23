@@ -1,28 +1,21 @@
-const express = require('express')
+import { Router } from "express";
+import multer from "multer";
+import uploadConfig from "./config/upload";
 
-const multer = require('multer')
-const uploadConfig = require('./config/upload.js')
+import BookingController from "./controllers/BookingController";
+import DashboardController from "./controllers/DashboardController";
+import SessionController from "./controllers/SessionController";
+import SpotController from "./controllers/SpotController";
 
-const SessionController = require('./controllers/SessionController.js')
-const SpotController = require('./controllers/SpotController.js')
-const DashboardController = require('./controllers/DashboardController.js')
-const BookingController = require('./controllers/BookingController.js')
-const ApprovalController = require('./controllers/ApprovalController.js')
-const RejectionController = require('./controllers/RejectionController.js')
+const routes = Router();
+const upload = multer(uploadConfig);
 
-const routes = express.Router()
-const uploadMiddleware = multer(uploadConfig)
+routes.post("/sessions", SessionController.store);
 
-routes.post('/sessions', SessionController.store)
+routes.get("/dashboard", DashboardController.show);
 
-routes.get('/spots', SpotController.index)
-routes.post('/spots', uploadMiddleware.single('thumbnail'), SpotController.store)
+routes.get("/spots", SpotController.index);
+routes.post("/spots", upload.single("thumbnail"), SpotController.store);
+routes.post("/spots/:spotID/bookings", BookingController.store);
 
-routes.get('/dashboard', DashboardController.show)
-
-routes.post('/spots/:spot_id/bookings', BookingController.store)
-
-routes.post('/bookings/:booking_id/approvals', ApprovalController.store)
-routes.post('/bookings/:booking_id/rejections', RejectionController.store)
-
-module.exports = routes
+export default routes;

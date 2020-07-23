@@ -1,14 +1,22 @@
-const User = require('../models/User.js')
+import User from "../models/User";
 
-module.exports = {
-    async store(req,res) {
-        const email = req.body.email
-        const filter = { email }
-        const dataToUpsert = { email }
-        const user = await User.findOneAndUpdate(filter, dataToUpsert, {
-            new: true,
-            upsert: true
-        })
-        return res.json(user)
+// index, show, store, update, destroy
+
+/**
+ * req.query = acessar query params (filtros, get)
+ * req.params = acessar route params (post, put, delete...)
+ * req.body = acessar corpo da requisicao (post, put...)
+ */
+
+export default {
+  // async tá aqui por causa do await
+  async store(req, res) {
+    const { email } = req.body;
+    let user = await User.findOne({ email });
+    if (!user) {
+      user = await User.create({ email });
     }
-}
+    // await: espera o user.create retornar o resultado
+    return res.json(user);
+  },
+};

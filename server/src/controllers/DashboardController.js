@@ -1,11 +1,10 @@
-const Spot = require('../models/Spot.js')
+import Spot from "../models/Spot";
 
-module.exports = {
-    async show(req, res) {
-        const { user_id } = req.headers
+export default {
+  async show(req, res) {
+    const userID = req.headers["user-id"];
+    const spots = await Spot.find({ user: userID });
 
-        const spots = await Spot.find({ user: user_id })
-
-        return res.json(spots)
-    }
-}
+    return res.json(spots);
+  },
+};

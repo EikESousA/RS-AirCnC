@@ -1,24 +1,27 @@
 {
-  "name": "backend",
+  "name": "aircnc",
   "version": "1.0.0",
-  "description": "",
+  "description": "Backend do projeto criado na Semana OmniStack 9.0 da Rocketseat",
   "main": "index.js",
   "scripts": {
-    "start": "nodemon src/server.js"
+    "dev": "nodemon --exec babel-node ./src/server.js"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
   "dependencies": {
     "cors": "^2.8.5",
+    "dotenv": "^8.1.0",
     "express": "^4.17.1",
-    "kind-of": "^6.0.3",
-    "minimist": "^1.2.5",
-    "mongoose": "^5.9.18",
-    "multer": "^1.4.2",
-    "socket.io": "^2.3.0"
+    "mongoose": "^5.7.3",
+    "multer": "^1.4.2"
   },
   "devDependencies": {
+    "@babel/core": "^7.6.2",
+    "@babel/node": "^7.6.2",
+    "@babel/plugin-proposal-class-properties": "^7.5.5",
+    "@babel/preset-env": "^7.6.2",
+    "@types/dotenv": "^6.1.1",
     "nodemon": "^1.19.3"
   }
 }

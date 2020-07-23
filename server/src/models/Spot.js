@@ -1,22 +1,27 @@
-const mongoose = require('mongoose')
+import mongoose from "mongoose";
+import path from "path";
 
-const SpotSchema = new mongoose.Schema({
+const SpotSchema = new mongoose.Schema(
+  {
     thumbnail: String,
     company: String,
     price: Number,
     techs: [String],
     user: {
-        type: mongoose.Schema.Types.ObjectId,
-        ref: 'User'
-    }
-}, {
+      // Usuário que criou o Spot
+      type: mongoose.Schema.Types.ObjectId,
+      ref: "User", // Model
+    },
+  },
+  {
     toJSON: {
-        virtuals: true
-    }
-})
+      virtuals: true,
+    },
+  }
+);
 
-SpotSchema.virtual('thumbnail_url').get(function() {
-    return `http://192.168.1.71:3333/files/${this.thumbnail}`
-})
+SpotSchema.virtual("thumbnail_url").get(function () {
+  return path.join(process.env.APP_URL, "files", this.thumbnail);
+});
 
-module.exports = mongoose.model('Spot', SpotSchema)
+export default mongoose.model("Spot", SpotSchema);

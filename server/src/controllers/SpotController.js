@@ -1,26 +1,32 @@
-const Spot = require('../models/Spot.js')
+import Spot from '../models/Spot';
+import User from '../models/User';
 
-module.exports = {
+export default {
     async index(req, res) {
-        const { tech } = req.query
+        const { tech } = req.query;
+        const spots = await Spot.find({ techs: tech });
 
-        const spots = await Spot.find({ techs: tech})
-
-        res.json(spots)
+        return res.json(spots)
     },
-
     async store(req, res) {
-        const { filename } = req.file
-        const { company, techs, price } = req.body
-        const { user_id } = req.headers
+        const { filename } = req.file;
+        const { company, techs, price } = req.body;
+        const userID = req.headers['user-id'];
+
+        const user = await User.findById(userID);
+
+        if (!user) {
+            return res.status(400).json({ error: 'User doesn\'t exists' })
+        }
 
         const spot = await Spot.create({
-            user: user_id,
+            user: userID,
             thumbnail: filename,
-            company,
             techs: techs.split(',').map(tech => tech.trim()),
+            company,
             price
         })
-        res.json(spot)
+
+        return res.json(spot)
     }
 }

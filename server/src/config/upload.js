@@ -1,14 +1,16 @@
-const multer = require('multer')
-const path = require('path')
+import multer from "multer";
+import path from "path";
 
-module.exports = {
-    storage: multer.diskStorage({
-        destination: path.resolve(__dirname, '..', '..', 'uploads'),
-        filename: (req, file, cb) => {
-            const ext = path.extname(file.originalname)
-            const name = path.basename(file.originalname, ext)
+const dotenv = require("dotenv");
+dotenv.config();
 
-            cb(null, `${name}-${Date.now()}${ext}`)
-        }
-    })
-}
+export default {
+  storage: multer.diskStorage({
+    destination: process.env.STORAGE_PATH, // path.resolve(__dirname, '..', '..', '..', uploads)
+    filename: (req, file, cb) => {
+      const ext = path.extname(file.originalname);
+      const name = path.basename(file.originalname, ext);
+      cb(null, `${Date.now()}_${name}${ext}`);
+    },
+  }),
+};
