@@ -1,43 +1,37 @@
 import React, { useState, useMemo } from "react";
-import camera from "../../assets/camera.svg";
 import api from "../../services/api";
-import "./styles.css";
 
-export default function New() {
+import "./styles.css";
+import camera from "../../assets/camera.svg";
+
+export default function New({ history }) {
+  const [thumbnail, setThumbnail] = useState(null);
   const [company, setCompany] = useState("");
   const [techs, setTechs] = useState("");
   const [price, setPrice] = useState("");
-  const [thumb, setThumb] = useState(null);
 
   const preview = useMemo(() => {
-    return thumb ? URL.createObjectURL(thumb) : null;
-  }, [thumb]);
+    return thumbnail ? URL.createObjectURL(thumbnail) : null;
+  }, [thumbnail]);
 
-  async function handleSubmit(ev) {
-    ev.preventDefault();
-
-    const user = localStorage.getItem("user-id");
+  async function handleSubmit(event) {
+    event.preventDefault();
 
     const data = new FormData();
-    data.append("thumbnail", thumb);
-    data.append("company", company);
-    data.append("price", price);
-    data.append("techs", techs);
+    const user_id = localStorage.getItem("user");
 
-    const resp = await api.post("/spots", data, {
-      headers: { "User-Id": user },
+    data.append("thumbnail", thumbnail);
+    data.append("company", company);
+    data.append("techs", techs);
+    data.append("price", price);
+
+    await api.post("/aircnc/spots", data, {
+      headers: {
+        user_id,
+      },
     });
 
-    if (resp.status !== 200) {
-      alert("Não foi possível cadastrar spot");
-    } else {
-      // TODO descobrir porq isso nao funciona
-      window.location.href = "/dashboard";
-      // this.props.history.push('/dashboard');
-
-      // eslint-disable-next-line no-restricted-globals
-      // history.push('/dashboard');
-    }
+    history.push("/dashboard");
   }
 
   return (
@@ -45,46 +39,45 @@ export default function New() {
       <label
         id="thumbnail"
         style={{ backgroundImage: `url(${preview})` }}
-        className={thumb ? "has-thumbnail" : ""}
+        className={thumbnail ? "has-thumbnail" : ""}
       >
-        <input type="file" onChange={(ev) => setThumb(ev.target.files[0])} />
-        <img src={camera} alt="Upload de imagem" />
+        <input
+          type="file"
+          onChange={(event) => {
+            setThumbnail(event.target.files[0]);
+          }}
+        />
+        <img src={camera} alt="Enviar imagem" />
       </label>
 
-      <label htmlFor="company">Empresa *</label>
+      <label htmlFor="company">EMPRESA *</label>
       <input
         id="company"
-        type="text"
-        placeholder="Sua empresa"
+        placeholder="Sua empresa incrível"
         value={company}
-        onChange={(ev) => setCompany(ev.target.value)}
+        onChange={(event) => setCompany(event.target.value)}
       />
 
       <label htmlFor="techs">
-        Tecnologias *
-        <br />
-        <small>(separadas por vírgula)</small>
+        TECNOLOGIAS * <span>(separadas por vírgula)</span>
       </label>
       <input
         id="techs"
-        type="text"
         placeholder="Quais tecnologias usam?"
         value={techs}
-        onChange={(ev) => setTechs(ev.target.value)}
+        onChange={(event) => setTechs(event.target.value)}
       />
 
-      <label htmlFor="price">
-        Valor da diária
-        <br />
-        <small>(em branco para GRATUITO)</small>
+      <label htmlFor="company">
+        VALOR DA DIÁRIA * (em branco para GRATUITO)
       </label>
       <input
         id="price"
-        type="text"
         placeholder="Valor cobrado por dia"
         value={price}
-        onChange={(ev) => setPrice(ev.target.value)}
+        onChange={(event) => setPrice(event.target.value)}
       />
+
       <button type="submit" className="btn">
         Cadastrar
       </button>

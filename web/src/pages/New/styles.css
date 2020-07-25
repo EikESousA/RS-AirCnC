@@ -3,10 +3,10 @@ label#thumbnail {
   border: 1px dashed #ddd;
   background-size: cover;
   cursor: pointer;
+  height: 160px;
   display: flex;
-  min-height: 160px;
   justify-content: center;
-  align-content: center;
+  align-items: center;
 }
 
 label#thumbnail input {

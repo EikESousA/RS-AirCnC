@@ -1,12 +1,15 @@
 import React from "react";
-import Routes from "./routes";
-import logo from "./assets/logo.svg";
 import "./App.css";
+
+import logo from "./assets/logo.svg";
+
+import Routes from "./routes";
 
 function App() {
   return (
     <div className="container">
-      <img src={logo} alt="AirCnC" />
+      <img src={logo} alt="AirCnC"></img>
+
       <div className="content">
         <Routes />
       </div>
