@@ -13,7 +13,7 @@ export default function Dashboard() {
   const socket = useMemo(
     () =>
       socketio("http://localhost:3333", {
-        query: { user_id },
+        query: { type: "aircnc", user_id },
       }),
     [user_id]
   );
